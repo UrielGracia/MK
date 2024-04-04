@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Juegooooo
+    <div class="container-juego" id="container-juego">
+      <header class="header">
+        <div class="categoria">
+          <?php echo obtenerNombreTema($preguntaActual['tema']) ?>
+        </div>
+        <a href="index.php">Mathkingdom</a>
+      </header>
+      <div class="info">
+        <div class="estadoPregunta">
+          Pregunta
+          <span class="numPregunta"
+            ><?php echo $_SESSION['numPreguntaActual'] + 1?></span
+          >
+          de
+          <?php echo $totalPreguntasPorJuego ?>
+        </div>
+        <h3>
+          <?php echo $preguntaActual['pregunta']?>
+        </h3>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+          <div class="opciones">
+            <label for="respuesta1" onclick="seleccionar(this)" class="op1">
+              <p><?php echo $preguntaActual['opcion_a']?></p>
+              <input
+                type="radio"
+                name="respuesta"
+                value="A"
+                id="respuesta1"
+                required
+              />
+            </label>
+            <label for="respuesta2" onclick="seleccionar(this)" class="op2">
+              <p><?php echo $preguntaActual['opcion_b']?></p>
+              <input
+                type="radio"
+                name="respuesta"
+                value="B"
+                id="respuesta2"
+                required
+              />
+            </label>
+            <label for="respuesta3" onclick="seleccionar(this)" class="op3">
+              <p><?php echo $preguntaActual['opcion_c']?></p>
+              <input
+                type="radio"
+                name="respuesta"
+                value="C"
+                id="respuesta3"
+                required
+              />
+            </label>
+          </div>
+          <div class="boton">
+            <input type="submit" value="Siguiente" name="siguiente" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/juego.js"></script>
+  </body>
+</html>
+
+<div class="container-juego" id="container-juego">
+  <header class="header">
+    <div class="categoria">
+      <?php echo obtenerNombreGrado($num_grado) ?>
+    </div>
+    <!--<a href="index.php">Mathkingdom</a>-->
+  </header>
+  <div class="info">
+    <div class="estadoPregunta">
+      Pregunta
+      <span class="numPregunta"
+        ><?php echo $_SESSION['numPreguntaActual'] + 1?></span
+      >
+      de
+      <?php echo $totalQ ?>
+    </div>
+    <h3>
+      <?php echo $preguntaActual['pregunta']?>
+    </h3>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
+      <div class="opciones">
+        <label for="respuesta1" onclick="seleccionar(this)" class="op1">
+          <p><?php echo $preguntaActual['opcion_a']?></p>
+          <input
+            type="radio"
+            name="respuesta"
+            value="A"
+            id="respuesta1"
+            required
+          />
+        </label>
+        <label for="respuesta2" onclick="seleccionar(this)" class="op2">
+          <p><?php echo $preguntaActual['opcion_b']?></p>
+          <input
+            type="radio"
+            name="respuesta"
+            value="B"
+            id="respuesta2"
+            required
+          />
+        </label>
+        <label for="respuesta3" onclick="seleccionar(this)" class="op3">
+          <p><?php echo $preguntaActual['opcion_c']?></p>
+          <input
+            type="radio"
+            name="respuesta"
+            value="C"
+            id="respuesta3"
+            required
+          />
+        </label>
+      </div>
+      <div class="boton">
+        <input type="submit" value="Siguiente" name="siguiente" />
+      </div>
+    </form>
+  </div>
+</div>
+<script src="juego.js"></script>
+
+<div class="dif">
+  <h1
+    class="display-3"
+    align="center"
+    style="
+      font-family: 'Nova Oval', serif;
+      margin-top: 3px;
+      padding-top: 45px;
+      padding-bottom: 35px;
+    "
+  >
+    Selecciona la dificultad
+  </h1>
+  <div style="margin-left: 170px">
+    <form action="quiz.php" class="seleccion_grado" method="POST">
+      <div class="row">
+        <div class="col">
+          <div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary text-center"
+                    name="grado"
+                    type="submit"
+                    value="1"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-bottom: 20px;
+                      margin-left: 110px;
+                      background: rgb(14, 136, 27);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                    "
+                  >
+                    Primer Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary"
+                    name="grado"
+                    type="submit"
+                    value="3"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-bottom: 20px;
+                      margin-left: 110px;
+                      background: var(--bs-btn-bg);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                    "
+                  >
+                    Tercer Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary"
+                    name="grado"
+                    type="submit"
+                    value="5"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-left: 110px;
+                      background: rgb(255, 107, 0);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                    "
+                  >
+                    Quinto Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary"
+                    name="grado"
+                    type="submit"
+                    value="2"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-bottom: 20px;
+                      margin-left: 110px;
+                      background: rgb(220, 5, 5);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                    "
+                  >
+                    Segundo Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary"
+                    name="grado"
+                    type="submit"
+                    value="4"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-bottom: 20px;
+                      margin-left: 110px;
+                      background: rgb(253, 215, 13);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                      color: rgb(0, 0, 0);
+                    "
+                  >
+                    Cuarto Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <button
+                    class="btn btn-primary"
+                    name="grado"
+                    type="submit"
+                    value="6"
+                    style="
+                      width: 250px;
+                      height: 150px;
+                      margin-left: 110px;
+                      background: rgb(104, 13, 253);
+                      font-size: 40px;
+                      font-family: 'Nova Oval', serif;
+                      border-style: none;
+                      border-radius: 55px;
+                    "
+                  >
+                    Sexto Grado
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<form
+  action="<?php echo $_SERVER['PHP_SELF'] ?>"
+  id="<?php echo $gr['grado']?>"
+>
+  <input type="hidden" name="idgrado" value="<?php echo $gr['grado']?>" />
+  <a
+    href="javascript:{}"
+    onclick="document.getElementById(<?php echo $gr['grado']?>).submit(); return false;"
+  >
+    <?php echo obtenerNombreGrado($gr['id'])?>
+  </a>
+</form>

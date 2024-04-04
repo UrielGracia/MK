@@ -1,0 +1,12 @@
+.carousel-item{
+	height: 13cm;
+}
+
+.carousel-item img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 13cm;
+	filter: brightness(35%);
+}
